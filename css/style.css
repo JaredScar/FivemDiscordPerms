@@ -1,0 +1,33 @@
+body {
+    background-image: url('img/fivem-background-pic.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+div#container-box {
+    background-color: #5d5d5d;
+    border-radius: 15px;
+    padding: 50px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+}
+div#container-content {}
+div#container-content button {
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border: 0;
+    background-color: purple;
+    border-radius: 5px;
+    border-bottom: 4px solid #440044;
+    border-right: 4px solid #440044;
+    padding: 2px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+div#container-content button:hover {
+    border-bottom: 4px solid purple;
+    border-right: 4px solid purple;
+}
