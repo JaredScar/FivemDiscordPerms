@@ -12,7 +12,19 @@ div#container-box {
     margin-right: auto;
     margin-top: 15%;
 }
-div#container-content {}
+div#container-content {
+    text-align: center;
+}
+div#container-content img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+div#container-content p {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
 div#container-content button {
     color: white;
     font-weight: bold;
@@ -30,4 +42,18 @@ div#container-content button {
 div#container-content button:hover {
     border-bottom: 4px solid purple;
     border-right: 4px solid purple;
+    cursor: pointer;
+}
+div#footer {
+    display: inline-block;
+    width: 100%;
+    background-color: #5d5d5d;
+    color: white;
+}
+div#footer div {
+    display: inline-block;
+}
+div#footer div#footer-left {}
+div#footer div#footer-right {
+    float: right;
 }
