@@ -6,6 +6,12 @@ Many fivem servers used the discord features in script and it made life so much
 easier... FivemDiscordPerms aims to bring back that ease again, however has
 a workaround to getting users' discords.
 
+## Not interested in setting all this up?
+No worries! Take a look down at `Publicy Available FivemDiscordPerms Website`! All
+you have to do is download the `BadgerDiscordAPI` directory, put that in your
+`/resources` of your fivem server, then you change the port within the config section
+of the `server.lua` file. Wa-la! Enjoy!
+
 ## How it works?
 Essentially, FivemDiscordPerms has a database in which holds the information of players
 who join your server. You run this website along with the database and fivem script.
