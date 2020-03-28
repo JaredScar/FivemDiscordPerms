@@ -17,4 +17,11 @@ you want the publicly available version (no setup required besides the Fivem scr
 you can find that further below including more information.
 
 ## Publicly Available FivemDiscordPerms Website
-TBA
+Alternatively, if you aren't too experienced with development things, you can try
+relying on the website I provided that I use for my server. I am not sure how this
+will handle multiple servers using it, so I consider this more as an experiment
+than anything else. If you want this as a real valid solution, then set it up only
+for your servers to use (your own discord application and database). The publicly
+available FivemDiscordPerms website is already provided within the config. All you
+need to change within the server.lua of the script is the port to match the server's
+port it is running from.
