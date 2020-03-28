@@ -42,7 +42,7 @@ if (!is_null($key)) {
             $currentTime = new DateTime();
             $currentTime->modify("+5 minutes");
             $endMillis = strtotime($currentTime->format('Y-m-d H:i:sP'));
-            $key = strval(base64_encode($key));
+            $key = str_replace('=', '', str_replace('+', '', strval(base64_encode($key))));
             if (setupKey($key, strval($gameLicense), strval($steam), strval($lastPlayerName), intval($endMillis))) {
                 echo json_encode($key);
             } else {

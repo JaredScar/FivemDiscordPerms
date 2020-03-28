@@ -48,9 +48,10 @@ function GetDiscordIdentifier(src)
   local discord = '';
   if data.data ~= nil then 
     print(data.data);
-    discord = 'discord:' .. data.data;
+    discord = tostring(data.data);
+    return discord;
   end
-  return discord;
+  return nil;
 end
 
 RegisterNetEvent('BadgerDiscordAPI:Register')
