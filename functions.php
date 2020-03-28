@@ -30,7 +30,7 @@ function checkKey($key) {
     $currentTime = new DateTime();
     $endMillis = strtotime($currentTime->format('Y-m-d H:i:sP'));
     $sql = getConn();
-    $stmt = $sql->prepare("SELECT `timeExpires`, `expired` FROM `AccessKeys` WHERE `keyy` = ?;");
+    $stmt = $sql->prepare("SELECT `timeExpires`, `expired` FROM `AccessKeys` WHERE `key` = ?;");
     $stmt->bind_param("s", $key);
     if ($stmt->execute()) {
         // Check timeExpires and if is expired already
@@ -55,7 +55,7 @@ function checkKey($key) {
 }
 function expireKey($key) {
     $sql = getConn();
-    $stmt = $sql->prepare("DELETE FROM `AccessKeys` WHERE `keyy` = ?;");
+    $stmt = $sql->prepare("DELETE FROM `AccessKeys` WHERE `key` = ?;");
     $stmt->bind_param('s', $key);
     if($stmt->execute()) {
         return true;
@@ -114,7 +114,7 @@ function uploadData($key, $discordCode) {
     $gameLicense = '';
     $discord = $discordID;
     $sql = getConn();
-    $stmt = $sql->prepare('SELECT `lastPlayerName`, `steam`, `gameLicense` FROM `AccessKeys` WHERE `keyy` = ?;');
+    $stmt = $sql->prepare('SELECT `lastPlayerName`, `steam`, `gameLicense` FROM `AccessKeys` WHERE `key` = ?;');
     $stmt->bind_param("s", $key);
     $stmt->execute();
     $res = $stmt->get_result();
