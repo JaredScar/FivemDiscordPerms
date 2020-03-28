@@ -39,9 +39,11 @@ function checkKey($key) {
             $expired = $row['expired'];
             $timeExpires = $row['timeExpires'];
             if ($expired === 1) {
+                expireKey($key);
                 return false;
             }
             if ($timeExpires < $endMillis) {
+                expireKey($key);
                 return false;
             }
         }
