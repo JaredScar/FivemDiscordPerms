@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'functions.php';
 $key = getKey();
 $discordCode = $_GET['code'];
@@ -6,7 +7,7 @@ if (checkKey($key)) {
     if (uploadData($key, $discordCode)) {
 // AT END:
         expireKey($key);
-        destroySession();
+        session_destroy();
     } else {
         echo 'Something went wrong... Sorry.';
     }

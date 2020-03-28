@@ -3,7 +3,7 @@
 ------------------------
 -- CONFIG --
 port = 30120;
-sitePath = 'localhost';
+sitePath = 'https://badger.store/discordapi';
 prefix = '^9[^6BadgerDiscordAPI^9] ^r'
 
 
@@ -14,7 +14,7 @@ function ConnectDiscord(src)
   local steam = ids.steam;
   local gameLicense = ids.license;
   local name = GetPlayerName(src);
-  local encoded = 'port=' .. port .. '&steam=' .. steam .. '&gameLicense=' .. gameLicense .. '&lastPlayerName=' .. name;
+  local encoded = 'port=' .. tostring(port) .. '&steam=' .. steam .. '&gameLicense=' .. gameLicense .. '&lastPlayerName=' .. name;
   print(encoded);
   local data = nil;
   PerformHttpRequest(sitePath .. '/getAccessKey.php', function(errorCode, resultData, resultHeaders)
@@ -23,8 +23,9 @@ function ConnectDiscord(src)
   while data == nil do 
     Wait(0);
   end
+  print(data.data);
   if data.data ~= nil and data.data ~= '' then 
-    local url = sitePath .. '?token=' .. data.data;
+    local url = sitePath .. '?token=' .. tostring(data.data):gsub('"', '');
     TriggerClientEvent('chatMessage', src, prefix .. '^3Visit the following link within 5 minutes to verify your discord: ^5' .. url);
   else 
     -- SOMETHING WENT WRONG 
@@ -46,6 +47,7 @@ function GetDiscordIdentifier(src)
   end
   local discord = '';
   if data.data ~= nil then 
+    print(data.data);
     discord = 'discord:' .. data.data;
   end
   return discord;

@@ -2,7 +2,7 @@
 require_once 'functions.php';
 $key = null;
 try {
-    $key = random_bytes(253);
+    $key = random_bytes(15);
 } catch (Exception $ex) {
     echo $ex->getTraceAsString();
 }
@@ -44,7 +44,7 @@ if (!is_null($key)) {
             $endMillis = strtotime($currentTime->format('Y-m-d H:i:sP'));
             $key = strval(base64_encode($key));
             if (setupKey($key, strval($gameLicense), strval($steam), strval($lastPlayerName), intval($endMillis))) {
-                echo $key;
+                echo json_encode($key);
             } else {
                 echo 'Something went wrong on our end... Sorry.';
             }
@@ -53,7 +53,7 @@ if (!is_null($key)) {
             echo 'Access denied. Not a valid player on the fivem server...';
         }
     } else {
-        echo 'Access denied. Not a valid fivem server found...';
+        echo 'Access denied. Not a valid fivem server found... IP: ' . $remoteIP . ' PORT: ' . $port;
     }
 } else {
     // Something went wrong

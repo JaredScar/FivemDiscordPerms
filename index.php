@@ -1,9 +1,10 @@
 <?php
+session_start();
 require_once 'functions.php';
 require_once 'config.php';
 global $urlRedirect;
 $key = $_GET['token'];
-if (!is_null($key) and !isset($key) and checkKey($key)) {
+if (!is_null($key) and isset($key) and checkKey($key)) {
     sessionKey($key);
     ?>
     <!DOCTYPE html>
@@ -27,4 +28,4 @@ if (!is_null($key) and !isset($key) and checkKey($key)) {
     </html>
     <?php
 }
-    ?>
+?>

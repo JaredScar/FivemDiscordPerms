@@ -12,5 +12,6 @@ if (is_array($contentJSON)) {
     // If so, then we want to submit this for finding their discord if they have one connected
     $discord = getDiscord($steam, $gameLicense, $lastPlayerName);
     echo $discord;
+} else {
+    echo 'Access denied. Not a valid fivem server found... IP: ' . $remoteIP . ' PORT: ' . $port;
 }
-echo 'Access denied. Not a valid server found...';
