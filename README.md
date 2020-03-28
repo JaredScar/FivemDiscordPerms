@@ -25,3 +25,11 @@ for your servers to use (your own discord application and database). The publicl
 available FivemDiscordPerms website is already provided within the config. All you
 need to change within the server.lua of the script is the port to match the server's
 port it is running from.
+
+
+## How do I as a developer use the Fivem script?
+So clearly, I couldn't take over Fivem's identifiers function. I however made the
+function exported named `GetDiscordIdentifier(src)` in which you pass `src` as the
+player source within the server-side of your script. To fully utilize this 
+(within a lua script, not sure about C#, so please make a pull request if you do):
+`exports.BadgerDiscordAPI:GetDiscordIdentifier(src)`
