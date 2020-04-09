@@ -26,12 +26,27 @@ function ConnectDiscord(src)
   print(data.data);
   if data.data ~= nil and data.data ~= '' then 
     local url = sitePath .. '?token=' .. tostring(data.data):gsub('"', '');
+    TriggerClientEvent('BadgerDiscordAPI:PassToken', src, url);
+    Wait(1000);
+    TriggerClientEvent('BadgerDiscordAPI:TogglePanel', src);
+    print('' .. url);
     TriggerClientEvent('chatMessage', src, prefix .. '^3Visit the following link within 5 minutes to verify your discord: ^5' .. url);
   else 
     -- SOMETHING WENT WRONG 
     TriggerClientEvent('chatMessage', src, prefix .. '^1Error: Something went wrong on our end... Please try again later!');
   end
 end
+Citizen.CreateThread(function()
+  while true do 
+    Wait((1000 * 10)) -- Every 10 seconds 
+    for _, player in ipairs(GetPlayers()) do 
+      local disc = GetDiscordIdentifier(player);
+      if disc ~= nil and #disc > 4 then 
+        TriggerClientEvent('BadgerDiscordAPI:SetPanel', player, false);
+      end
+    end
+  end
+end)
 function GetDiscordIdentifier(src)
   local ids = ExtractIdentifiers(src);
   local steam = ids.steam;
@@ -58,7 +73,7 @@ RegisterNetEvent('BadgerDiscordAPI:Register')
 AddEventHandler('BadgerDiscordAPI:Register', function()
   local src = source;
   local discord = GetDiscordIdentifier(src);
-  if #discord < 10 then 
+  if discord ~= nil then 
     -- Not a valid discord 
     ConnectDiscord(src);
   end
