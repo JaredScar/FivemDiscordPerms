@@ -39,3 +39,7 @@ function exported named `GetDiscordIdentifier(src)` in which you pass `src` as t
 player source within the server-side of your script. To fully utilize this 
 (within a lua script, not sure about C#, so please make a pull request if you do):
 `exports.BadgerDiscordAPI:GetDiscordIdentifier(src)`
+
+## Further Documentation
+The further documentation for this project can be found over at 
+https://docs.badger.store/badger-software/fivemdiscordperms
