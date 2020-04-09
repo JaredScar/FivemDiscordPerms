@@ -30,15 +30,15 @@ roleList = {
 }
 roleList = { 
 	['👮 LSPD | '] = {581881252907319369, 2, 
-	'https://discordapp.com/api/webhooks/659240547143385099/ydVnMonuWD832Ion0Hkv1UElO_pL6tPa2K8AHI4cwqLXkQePQ57uzGp_Qr32ocYqFFCc', 5.0},
+	'', 5.0},
 	['👮 Sheriff | '] = {577622764618383380, 17, 
-	'https://discordapp.com/api/webhooks/659240351852134400/XbHGVFWi98jA3Fz_8Qz9J3LXPeb1XuPOe8hBUUl6-2GeoeR66BMJDX1vp_-KBERhXfZ7', 5.0},
+	'', 5.0},
 	['👮 SAHP | '] = {506276895935954944, 3, 
-	'https://discordapp.com/api/webhooks/659239335803224096/OEkVdFwtv7YtA6x2WlwkaV6GA49niONIu1dooJrh1AO02weMYnn6ogw9hVfKnZN_MsXF', 5.0},
+	'', 5.0},
 	['👨‍🚒 Fire/EMS | '] = {577635624618819593, 1, 
-	'https://discordapp.com/api/webhooks/659240692647723018/vZvyP2q6CLrqbJ0FmmPEmABQyzz7hQxcbBadgJklSS4Ru39aNxphxPoimFwVjQA2Ftmv', 7.0},
+	'', 7.0},
 	['🎖️ NG | '] = {609828128432586752, 5, 
-	'https://discordapp.com/api/webhooks/659241060475731968/2KCNUUcBDNfBhcCUQmD5vVsfgvlDUAqiRow9ioU0hqixOcqHGMYG-jkENfd4pQZrc3M8', 5.0},
+	'', 5.0},
 }
 
 -- CODE --
